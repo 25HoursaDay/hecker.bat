@@ -1,52 +1,64 @@
 <head>
-<style>
-#efef{
-  height:100vh;
-  width:100%;
-  margin-top:0;
-  border:1px green solid;
-}
-  .fe {
-  background-color:limegreen;
-  height:20px;
-  width:100%;
-  margin-top:0;
-  border:none;
-  }
-  .barbtn {
-    border:2px darkgreen solid;
-    font-size:15px;
-    margin-top:0;
-    float:right;
-    margin-right:5px;
-    background-color:limegreen;
-  }
-  .barbtn:hover{
-    cursor:pointer;
-  }
-  #pframe {background-color:lightgray;}
+  <style>
+    #efef {
+      height: 100vh;
+      width: 100%;
+      margin-top: 0;
+      border: 1px green solid;
+    }
+
+    .fe {
+      background-color: limegreen;
+      height: 20px;
+      width: 100%;
+      margin-top: 0;
+      border: none;
+    }
+
+    .barbtn {
+      border: 2px darkgreen solid;
+      font-size: 15px;
+      margin-top: 0;
+      float: right;
+      margin-right: 5px;
+      background-color: limegreen;
+    }
+
+    .barbtn:hover {
+      cursor: pointer;
+    }
+
+    #pframe {
+      background-color: lightgray;
+    }
+
   </style>
-  </head>
-  <body>
+</head>
+
+<body>
   <div id="efef">
-   <p class="fe">
-   <a id="close" class="barbtn" onclick="closeScreen();">X</a>
-   <a id="fullscreen" class="barbtn" onclick='fullscreenscreen(document.getElementById("pframe"))'>FULLSCREEN</a>
-   <a id="minimize" class="barbtn" onclick="minimize()">-</a>
-   </p>
-   <div id="pframe">
-   <p>gay</p>
-   </div>
+    <p class="fe">
+      <a id="close" class="barbtn" onclick="closeScreen();">X</a>
+      <a id="fullscreen" class="barbtn" onclick='fullscreenscreen(document.getElementById("pframe"))'>FULLSCREEN</a>
+      <a id="minimize" class="barbtn" onclick="minimize()">-</a>
+    </p>
+    <div id="pframe">
+      <p>gay</p>
+    </div>
   </div>
-  </body>
-  <script>
-  function fullscreenscreen(elem){
-  elem.requestFullscreen();
+</body>
+<script>
+  function fullscreenscreen(elem) {
+    elem.requestFullscreen();
   }
+
   function closeScreen() {
-  document.getElementById("efef").close;
+    document.getElementById("pframe").innerHTML = "";
+    document.getElementById("efef").style.display = "none";
   }
+
   function minimize() {
-  
+    document.getElementById("efef").style.display = "none";
   }
-  </script>
+
+</script>

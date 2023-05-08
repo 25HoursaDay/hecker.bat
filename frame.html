@@ -1,0 +1,46 @@
+<head>
+<style>
+#efef{
+  height:100vh;
+  width:100%;
+  margin-top:0;
+  border:1px green solid;
+}
+  .fe {
+  background-color:limegreen;
+  height:20px;
+  width:100%;
+  margin-top:0;
+  border:none;
+  }
+  .barbtn {
+    border:2px darkgreen solid;
+    font-size:15px;
+    margin-top:0;
+    float:right;
+    margin-right:5px;
+    background-color:limegreen;
+  }
+  .barbtn:hover{
+    cursor:pointer;
+  }
+  #pframe {background-color:lightgray;}
+  </style>
+  </head>
+  <body>
+  <div id="efef">
+   <p class="fe">
+   <a id="close" class="barbtn">X</a>
+   <a id="fullscreen" class="barbtn" onclick='fullscreenscreen(document.getElementById("pframe"))'>FULLSCREEN</a>
+   
+   </p>
+   <div id="pframe">
+   <p>gay</p>
+   </div>
+  </div>
+  </body>
+  <script>
+  function fullscreenscreen(eleme){
+  eleme.requestFullscreen();
+  }
+  </script>

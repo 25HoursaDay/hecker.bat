@@ -28,6 +28,16 @@
       cursor: pointer;
     }
 
+    .bartext {
+      font-size: 15px;
+      float: left;
+      background-color: limegreen;
+    }
+
+    .bartext:hover {
+      cursor: pointer;
+    }
+
     #pframe {
       background-color: lightgray;
     }
@@ -38,6 +48,7 @@
 <body>
   <div id="efef">
     <p class="fe">
+      <a id="title" class="bartext">Hecker.bat Window</a>
       <a id="close" class="barbtn" onclick="closeScreen();">X</a>
       <a id="fullscreen" class="barbtn" onclick='fullscreenscreen(document.getElementById("pframe"))'>FULLSCREEN</a>
       <a id="minimize" class="barbtn" onclick="minimize()">-</a>

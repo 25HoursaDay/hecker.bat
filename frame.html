@@ -30,9 +30,9 @@
   <body>
   <div id="efef">
    <p class="fe">
-   <a id="close" class="barbtn">X</a>
+   <a id="close" class="barbtn" onclick="closeScreen();">X</a>
    <a id="fullscreen" class="barbtn" onclick='fullscreenscreen(document.getElementById("pframe"))'>FULLSCREEN</a>
-   
+   <a id="minimize" class="barbtn" onclick="minimize()">-</a>
    </p>
    <div id="pframe">
    <p>gay</p>
@@ -40,7 +40,13 @@
   </div>
   </body>
   <script>
-  function fullscreenscreen(eleme){
-  eleme.requestFullscreen();
+  function fullscreenscreen(elem){
+  elem.requestFullscreen();
+  }
+  function closeScreen() {
+  document.getElementById("efef").close;
+  }
+  function minimize() {
+  
   }
   </script>

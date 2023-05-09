@@ -4,24 +4,27 @@
       height: 100vh;
       width: 100%;
       margin-top: 0;
-      border: 1px green solid;
+      border: 2px green solid;
     }
 
     .fe {
       background-color: limegreen;
-      height: 20px;
+      height: 28px;
       width: 100%;
       margin-top: 0;
-      border: none;
+      border: 2px darkgreen solid;
     }
 
     .barbtn {
       border: 2px darkgreen solid;
-      font-size: 15px;
-      margin-top: 0;
+      font-size: 20px;
+      width: 20px;
       float: right;
       margin-right: 5px;
       background-color: limegreen;
+      box-sizing: border-box;
+      text-align: center;
+      margin-top: 0;
     }
 
     .barbtn:hover {
@@ -29,9 +32,10 @@
     }
 
     .bartext {
-      font-size: 15px;
+      font-size: 25px;
       float: left;
-      background-color: limegreen;
+      margin-top: 0;
+      margin-left: 5px;
     }
 
     .bartext:hover {
@@ -40,19 +44,21 @@
 
     #pframe {
       background-color: lightgray;
+      margin-top: 0;
     }
 
   </style>
 </head>
 
 <body>
+  <div class="fe">
+    <p id="title" class="bartext">Hecker.bat Window</p>
+    <p id="close" class="barbtn" onclick="closeScreen();">X</p>
+    <p id="fullscreen" class="barbtn" onclick='fullscreenscreen(document.getElementById("pframe"))'>F</p>
+    <p id="minimize" class="barbtn" onclick="minimize()">-</p>
+  </div>
   <div id="efef">
-    <p class="fe">
-      <a id="title" class="bartext">Hecker.bat Window</a>
-      <a id="close" class="barbtn" onclick="closeScreen();">X</a>
-      <a id="fullscreen" class="barbtn" onclick='fullscreenscreen(document.getElementById("pframe"))'>FULLSCREEN</a>
-      <a id="minimize" class="barbtn" onclick="minimize()">-</a>
-    </p>
+
     <div id="pframe">
       <p>okay</p>
     </div>

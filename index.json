@@ -6,7 +6,8 @@
       "misc": ["main.json"]
     },
     "index.html",
-    "frame.html",
-    "index.json"
+    "index.json",
+    "frame.html"
+    
   ]
 }

@@ -1,0 +1,12 @@
+{
+  "root": [{
+      "css": ["main.css"],
+      "html": [],
+      "js": ["main.js"],
+      "misc": ["main.json"]
+    },
+    "index.html",
+    "frame.html",
+    "index.json"
+  ]
+}

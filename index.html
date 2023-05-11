@@ -6,13 +6,14 @@
       overflow: hidden;
     }
 
-    body {
+    #full {
       height: 75vh;
       width: 75vh;
       border: 4px green solid;
       box-sizing: border-box;
       z-index: 9;
       overflow: hidden;
+      position: absolute;
     }
 
     .fe {
@@ -82,27 +83,30 @@
 </head>
 
 <body>
+  <div id="full">
 
-  <div class="fe" id="fe">
-    <p id="title" class="bartext">Hecker.bat</p>
-    <div id="btns">
-      <p id="close" class="barbtn" onclick="closeScreen();">X</p>
-      <p id="fullscreen" class="barbtn" onclick='fullscreenscreen(document.getElementById("pframe"))'>F</p>
-      <p id="minimize" class="barbtn" onclick="minimize()">-</p>
+
+    <div class="fe" id="fe">
+      <p id="title" class="bartext">Hecker.bat</p>
+      <div id="btns">
+        <p id="close" class="barbtn" onclick="closeScreen();">X</p>
+        <p id="fullscreen" class="barbtn" onclick='fullscreenscreen(document.getElementById("pframe"))'>F</p>
+        <p id="minimize" class="barbtn" onclick="minimize()">-</p>
+      </div>
     </div>
-  </div>
-  <div id="efef">
-    <div id="pframe">
-      <p>okay</p><br>
-      <p>okay</p><br>
-      <p>okay</p><br>
-      <p>okay</p><br>
-      <p>okay</p><br>
-      <p>okay</p><br>
-      <p>okay</p><br>
-      <p>okay</p><br>
-      <p>okay</p><br>
-      <p>okay</p><br>
+    <div id="efef">
+      <div id="pframe">
+        <p>okay</p><br>
+        <p>okay</p><br>
+        <p>okay</p><br>
+        <p>okay</p><br>
+        <p>okay</p><br>
+        <p>okay</p><br>
+        <p>okay</p><br>
+        <p>okay</p><br>
+        <p>okay</p><br>
+        <p>okay</p><br>
+      </div>
     </div>
   </div>
 </body>
@@ -118,6 +122,53 @@
 
   function minimize() {
     document.getElementById("full").style.display = "none";
+  }
+
+  //Make the DIV element draggagle:
+  dragElement(document.getElementById("full"));
+
+  function dragElement(elmnt) {
+    var pos1 = 0,
+      pos2 = 0,
+      pos3 = 0,
+      pos4 = 0;
+    if (document.getElementById(elmnt.id + "header")) {
+      /* if present, the header is where you move the DIV from:*/
+      document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+    } else {
+      /* otherwise, move the DIV from anywhere inside the DIV:*/
+      elmnt.onmousedown = dragMouseDown;
+    }
+
+    function dragMouseDown(e) {
+      e = e || window.event;
+      e.preventDefault();
+      // get the mouse cursor position at startup:
+      pos3 = e.clientX;
+      pos4 = e.clientY;
+      document.onmouseup = closeDragElement;
+      // call a function whenever the cursor moves:
+      document.onmousemove = elementDrag;
+    }
+
+    function elementDrag(e) {
+      e = e || window.event;
+      e.preventDefault();
+      // calculate the new cursor position:
+      pos1 = pos3 - e.clientX;
+      pos2 = pos4 - e.clientY;
+      pos3 = e.clientX;
+      pos4 = e.clientY;
+      // set the element's new position:
+      elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+      elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+    }
+
+    function closeDragElement() {
+      /* stop moving when mouse button is released:*/
+      document.onmouseup = null;
+      document.onmousemove = null;
+    }
   }
 
 </script>

@@ -1,7 +1,8 @@
 /*Startup code*/
+let path = "www.example.com";
 function InternalTrojan(lnk) {
 	let win = window.open();
-	fetch("https://raw.githubusercontent.com/25HoursaDay/hecker.bat/"+lnk)
+	fetch(""+path+lnk)
 	.then((result) => { return result.text(); })
 	.then((content) => { win.document.write(content); });
 }

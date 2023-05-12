@@ -1,102 +1,102 @@
-<style>
-  #full {
-    height: 75vh;
-    width: 75vh;
-    border: 4px green solid;
-    box-sizing: border-box;
-    z-index: 9;
-    overflow: hidden;
-    position: absolute;
-  }
-
-  .fe {
-    background-color: limegreen;
-    height: 28px;
-    width: 100%;
-    margin-top: 0;
-    display: flex;
-    align-items: center;
-    z-index: 2;
-    position: sticky;
-    overflow: hidden;
-    user-select: none;
-  }
-
-  #btns {
-    display: flex;
-    align-items: center;
-    flex-direction: row-reverse;
-    margin-left: calc(75vh - 92px);
-    float: right;
-    position: absolute;
-  }
-
-  .barbtn {
-    border: 2px darkgreen solid;
-    font-size: 20px;
-    width: 20px;
-    margin-right: 5px;
-    background-color: limegreen;
-    height: 20px;
-    text-align: center;
-  }
-
-  .barbtn:hover {
-    cursor: pointer;
-  }
-
-  .bartext {
-    font-size: 25px;
-    margin-left: 5px;
-  }
-
-  .bartext:hover {
-    cursor: pointer;
-  }
-
-  #efef {
-    height: calc(100% - 28px);
-    width: 100%;
-    margin-top: 0;
-    border-top: 4px green solid;
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    z-index: 2;
-    overflow-y: scroll;
-    text-align: center;
-  }
-
-  #pframe {
-    color: green;
-    height: 100vh;
-    margin-top: 0;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-sizing: border-box;
-  }
-
-  #pframe a {
-    padding: 5px;
-    border: 2px green solid;
-    border-radius: 5px;
-    width: calc(100% - 50px);
-    box-sizing: border-box;
-    margin-top: 0px;
-  }
-
-  #maximize {
-    display: none;
-  }
-
-  #minimize {
-    display: block;
-  }
-
-</style>
 <div id="full">
+  <style>
+    #full {
+      height: 75vh;
+      width: 75vh;
+      border: 4px green solid;
+      box-sizing: border-box;
+      z-index: 9;
+      overflow: hidden;
+      position: absolute;
+    }
+
+    .fe {
+      background-color: limegreen;
+      height: 28px;
+      width: 100%;
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      z-index: 2;
+      position: sticky;
+      overflow: hidden;
+      user-select: none;
+    }
+
+    #btns {
+      display: flex;
+      align-items: center;
+      flex-direction: row-reverse;
+      margin-left: calc(75vh - 92px);
+      float: right;
+      position: absolute;
+    }
+
+    .barbtn {
+      border: 2px darkgreen solid;
+      font-size: 20px;
+      width: 20px;
+      margin-right: 5px;
+      background-color: limegreen;
+      height: 20px;
+      text-align: center;
+    }
+
+    .barbtn:hover {
+      cursor: pointer;
+    }
+
+    .bartext {
+      font-size: 25px;
+      margin-left: 5px;
+    }
+
+    .bartext:hover {
+      cursor: pointer;
+    }
+
+    #efef {
+      height: calc(100% - 28px);
+      width: 100%;
+      margin-top: 0;
+      border-top: 4px green solid;
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      z-index: 2;
+      overflow-y: scroll;
+      text-align: center;
+    }
+
+    #pframe {
+      color: green;
+      height: 100vh;
+      margin-top: 0;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-sizing: border-box;
+    }
+
+    #pframe a {
+      padding: 5px;
+      border: 2px green solid;
+      border-radius: 5px;
+      width: calc(100% - 50px);
+      box-sizing: border-box;
+      margin-top: 0px;
+    }
+
+    #maximize {
+      display: none;
+    }
+
+    #minimize {
+      display: block;
+    }
+
+  </style>
   <div class="fe" id="fe">
     <p id="title" class="bartext">Hecker.bat</p>
     <div id="btns">
@@ -124,8 +124,7 @@
     }
 
     function closeScreen() {
-      document.head.innerHTML = "";
-      document.body.innerHTML = "";
+      document.getElementById("full").remove();
     }
 
     function minimize() {

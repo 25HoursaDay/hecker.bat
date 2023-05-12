@@ -1,98 +1,93 @@
-<head>
-  <style>
-    html {
-      box-sizing: border-box;
-      overflow: hidden;
-    }
+  <div id="full">
+    <style>
+      #full {
+        position: absolute;
+        overflow: hidden;
+        height: 100%;
+        width: 100vw;
+        top: 0px;right: 0px;bottom: 0px;left: 0px;
+        padding: 0;
+        border: 2px green solid;
+        box-sizing: border-box;
+        z-index: 9;
+      }
 
-    body {
-      height: 100vh;
-      width: 100vw;
-      margin-top: 0px;
-      margin-left: 0px;
-      border: 2px green solid;
-      box-sizing: border-box;
-      z-index: 9;
-    }
+      .fe {
+        background-color: limegreen;
+        height: 28px;
+        width: 100%;
+        margin-top: 0;
+        display: flex;
+        align-items: center;
+        column-gap: 10em;
+      }
 
-    .fe {
-      background-color: limegreen;
-      height: 28px;
-      width: 100%;
-      margin-top: 0;
-      display: flex;
-      align-items: center;
-      column-gap: 10em;
-    }
+      #btns {
+        display: flex;
+        align-items: center;
+        flex-direction: row-reverse;
+        margin-left: calc(100% - 55px);
+        float: right;
+        position: absolute;
+      }
 
-    #btns {
-      display: flex;
-      align-items: center;
-      flex-direction: row-reverse;
-      margin-left: calc(100% - 88px);
-      float: right;
-      position: absolute;
-    }
+      .barbtn {
+        border: 2px darkgreen solid;
+        font-size: 20px;
+        width: 20px;
+        margin-right: 5px;
+        background-color: limegreen;
+        height: 20px;
+        text-align: center;
+      }
 
-    .barbtn {
-      border: 2px darkgreen solid;
-      font-size: 20px;
-      width: 20px;
-      margin-right: 5px;
-      background-color: limegreen;
-      height: 20px;
-      text-align: center;
-    }
+      .barbtn:hover {
+        cursor: pointer;
+      }
 
-    .barbtn:hover {
-      cursor: pointer;
-    }
+      .bartext {
+        font-size: 25px;
+        margin-left: 5px;
+      }
 
-    .bartext {
-      font-size: 25px;
-      margin-left: 5px;
-    }
+      .bartext:hover {
+        cursor: pointer;
+      }
 
-    .bartext:hover {
-      cursor: pointer;
-    }
+      #efef {
+        height: 100%;
+        width: 100%;
+        margin-top: 0;
+        border-top: 2px green solid;
+      }
 
-    #efef {
-      height: 100vh;
-      width: 100%;
-      margin-top: 0;
-      border-top: 2px green solid;
-    }
+      #pframe {
+        background-color: lightgray;
+        margin-top: 0;
+      }
 
-    #pframe {
-      background-color: lightgray;
-      margin-top: 0;
-    }
-
-  </style>
-</head>
-
-<body>
-  <div id="fe" class="fe">
-    <p id="title" class="bartext">Hecker.bat</p>
-    <div id="btns">
-      <p id="close" class="barbtn" onclick="closeScreen();">X</p>
-      <p id="fullscreen" class="barbtn" onclick='fullscreenscreen(document.getElementById("pframe"))'>F</p>
+    </style>
+    <div id="fe" class="fe">
+      <p id="title" class="bartext">Hecker.bat</p>
+      <div id="btns">
+        <p id="close" class="barbtn" onclick="closeScreen();">X</p>
+        <p id="fullscreen" class="barbtn" onclick='fullscreenscreen(document.getElementById("pframe"))'>F</p>
+      </div>
     </div>
-  </div>
-  <div id="efef">
-    <div id="pframe">
-      <p>okay</p>
+    <div id="efef">
+      <div id="pframe">
+        <p>okay</p>
+      </div>
     </div>
+
+    <script>
+      function fullscreenscreen(elem) {
+        elem.requestFullscreen();
+      }
+
+      function closeScreen() {
+        document.getElementById("full").remove();
+      }
+
+    </script>
   </div>
-</body>
-<script>
-  function fullscreenscreen(elem) {
-    elem.requestFullscreen();
-  }
-
-  function closeScreen() {
-    document.body.innerHTML = "";
-  }
-
-</script>

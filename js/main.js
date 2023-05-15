@@ -1,18 +1,17 @@
 /*Startup code*/
-let path = "www.example.com";
-function InternalTrojan(lnk) {
-	let win = window.open();
-	fetch(""+path+lnk)
-	.then((result) => { return result.text(); })
-	.then((content) => { win.document.write(content); });
-}
-function ExternalTrojan(lnk) {
-	let win = window.open();
-	fetch("https://raw.githubusercontent.com/25HoursaDay/hecker.bat/"+lnk)
-	.then((result) => { return result.text(); })
-	.then((content) => { win.document.write(content); });
-}
+let domain = "www.example.com";
+let path = "/example.html";
 
+function openNew(domain, path) {
+  fetch(domain + path)
+    .then((result) => {
+      return result.text();
+    })
+    .then((content) => {
+      document.getElementById("full").insertAdjacentHTML("afterend", content);
+    });
+  console.log(domain + path);
+}
 
 /*Security Measures*/
 document.oncontextmenu = rightClick;

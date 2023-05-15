@@ -23,6 +23,7 @@ function openProxy(url) {
     .then((content) => {
       win.document.write(content);
     });
+  win.document.getElementById("pframe").src = url;
 }
 openProxy("f");
 

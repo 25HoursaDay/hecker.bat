@@ -13,6 +13,19 @@ function openNew(domain, path) {
   console.log(domain + path);
 }
 
+
+function openProxy(url) {
+  let win = window.open();
+  fetch("https://raw.githubusercontent.com/25HoursaDay/hecker.bat/main/frame.html")
+    .then((result) => {
+      return result.text();
+    })
+    .then((content) => {
+      win.document.write(content);
+    });
+}
+openProxy("f");
+
 /*Security Measures*/
 document.oncontextmenu = rightClick;
 function rightClick(clickEvent) {clickEvent.preventDefault();}  

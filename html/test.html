@@ -1,3 +1,16 @@
 <iframe sandbox="allow-pointer-lock allow-same-origin allow-scripts allow-forms">
 
 </iframe>
+<script>
+  open(x) = function openProxy(x) {
+  let win = window.open();
+  fetch("https://raw.githubusercontent.com/25HoursaDay/hecker.bat/main/frame.html")
+    .then((result) => {
+      return result.text();
+    })
+    .then((content) => {
+      win.document.write(content);
+    });
+  win.document.getElementById("pframe").src = url;
+}
+</script>

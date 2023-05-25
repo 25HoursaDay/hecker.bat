@@ -1,4 +1,5 @@
-<div id="container">
+<script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+<div id="pframe">
 
 </div>
 <script>
@@ -10,7 +11,6 @@
 
     // Options affecting files only
     "autoplay": "on",
-    "unmuteOverlay": "visible",
     "wmode": "window",
     "letterbox": "fullscreen",
     "warnOnUnsupportedContent": true,
@@ -30,18 +30,29 @@
   };
 
 
-  window.RufflePlayer = window.RufflePlayer || {};
-  window.addEventListener("load", (event) => {
-    const ruffle = window.RufflePlayer.newest();
-    const player = ruffle.createPlayer();
-    const container = document.getElementById("container");
-    container.appendChild(player);
+
+
+  function ruffleLoadUrl(swf) {
+    if (typeof ruffle == "undefined") {
+      var ruffle = window.RufflePlayer.newest();
+    }
+    if (typeof player == "undefined") {
+      var player = ruffle.createPlayer();
+      var container = document.getElementById("pframe");
+      container.appendChild(player);
+    }
+    if (typeof container == "undefined") {
+      var container = document.getElementById("pframe");
+      container.appendChild(player);
+    }
+
     player.load({
-      url: "https://cdn.jsdelivr.net/gh/CBGamesdev/chilibowlflash@9d4433f37be994bca13838c59bdb44b3f823cd6b/bloonstd.swf",
+      url: swf,
       parameters: "",
       allowScriptAccess: true,
     });
-  });
+  }
+
+  ruffleLoadUrl("https://cdn.jsdelivr.net/gh/CBGamesdev/chilibowlflash@9d4433f37be994bca13838c59bdb44b3f823cd6b/bloonstd.swf");
 
 </script>
-<script src="https://unpkg.com/@ruffle-rs/ruffle"></script>

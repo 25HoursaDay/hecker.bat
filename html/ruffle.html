@@ -1,4 +1,4 @@
-// need a div with "pframe" id
+
 <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
 <script>
   window.RufflePlayer = window.RufflePlayer || {};
@@ -27,22 +27,20 @@
     "allowNetworking": "all",
   };
 
-
-
-
   function ruffleLoadUrl(swf) {
     if (typeof ruffle == "undefined") {
       var ruffle = window.RufflePlayer.newest();
     }
     if (typeof player == "undefined") {
       var player = ruffle.createPlayer();
-      var container = document.getElementById("pframe");
+
+      if (typeof container == "undefined") {
+        var container = document.getElementById("efef");
+      }
+      player.id = "pframe";
       container.appendChild(player);
     }
-    if (typeof container == "undefined") {
-      var container = document.getElementById("pframe");
-      container.appendChild(player);
-    }
+
 
     player.load({
       url: swf,

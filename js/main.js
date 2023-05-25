@@ -52,7 +52,7 @@ function openEmu(core, bios, gam, dataPath, loaderPath) {
 // https://cdn.jsdelivr.net/gh/EmulatorJS/EmulatorJS@main/data/
 // https://cdn.jsdelivr.net/gh/EmulatorJS/EmulatorJS@main/data/loader.js
 
-function openRuffle(swf, rufflePath) {
+function openRuffle(swf) {
   let win = window.open();
   fetch("https://raw.githubusercontent.com/25HoursaDay/hecker.bat/main/frame.html")
     .then((result) => {
@@ -61,10 +61,19 @@ function openRuffle(swf, rufflePath) {
     .then((content) => {
       win.document.write(content);
     });
-  win.document.getElementById("pframe").src = swf;
-  let ruffleScript = win.document.createElement("script");
-  ruffleScript.src = rufflePath;
+
+  fetch("https://raw.githubusercontent.com/25HoursaDay/hecker.bat/main/html/ruffle.html")
+    .then((result) => {
+      return result.text();
+    })
+    .then((content) => {
+      win.document.getElementById("full").insertAdjacentHTML("beforeend", content);
+    });
+    win.document.getElementById("full").insertAdjacentHTML("beforeend", `
+    <script>ruffleLoadUrl(`+swf+`);</`+`script>
+    `);
 }
+
 
 /*Security Measures*/
 document.oncontextmenu = rightClick;

@@ -28,6 +28,7 @@
   };
 
   function ruffleLoadUrl(swf) {
+    document.getElementById("pframe").remove();
     if (typeof ruffle == "undefined") {
       var ruffle = window.RufflePlayer.newest();
     }
@@ -37,7 +38,7 @@
       if (typeof container == "undefined") {
         var container = document.getElementById("efef");
       }
-      player.id = "pframe";
+      player.id = "rframe";
       container.appendChild(player);
     }
 

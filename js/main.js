@@ -52,6 +52,16 @@ function openEmu(core, bios, gam, dataPath, loaderPath) {
 // https://cdn.jsdelivr.net/gh/EmulatorJS/EmulatorJS@main/data/
 // https://cdn.jsdelivr.net/gh/EmulatorJS/EmulatorJS@main/data/loader.js
 
+if (HeckerPage == "ruffle") {
+let ruffleSrc = document.createElement("script");
+let ruffleSrc2 = document.createElement("script");
+ruffleSrc.src = "https://unpkg.com/@ruffle-rs/ruffle";
+ruffleSrc2.src = "https://cdn.jsdelivr.net/gh/25HoursaDay/hecker.bat@main/js/ruffle.js";
+document.getElementById("full").append(ruffleSrc);
+document.getElementById("full").append(ruffleSrc);
+}
+
+
 function fullscreenscreen(elem) {
         elem.requestFullscreen();
       }

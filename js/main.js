@@ -52,27 +52,13 @@ function openEmu(core, bios, gam, dataPath, loaderPath) {
 // https://cdn.jsdelivr.net/gh/EmulatorJS/EmulatorJS@main/data/
 // https://cdn.jsdelivr.net/gh/EmulatorJS/EmulatorJS@main/data/loader.js
 
-function openRuffle(url) {
-  let win = window.open();
-  fetch("https://cdn.jsdelivr.net/gh/25HoursaDay/hecker.bat@main/frame.html")
-    .then((result) => {
-      return result.text();
-    })
-    .then((content) => {
-      win.document.querySelector("html").innerHTML = content;
-    });
+function fullscreenscreen(elem) {
+        elem.requestFullscreen();
+      }
 
-  fetch("https://cdn.jsdelivr.net/gh/25HoursaDay/hecker.bat@main/html/ruffle.html")
-    .then((result) => {
-      return result.text();
-    })
-    .then((content) => {
-      win.document.querySelector("#full").innerHTML = (win.document.querySelector("#full").innerHTML + content);
-      console.log(win.document.querySelector("#full").innerHTML);
-    });
-}
-
-
+      function closeScreen() {
+        document.getElementById("full").remove();
+      }
 /*Security Measures*/
 document.oncontextmenu = rightClick;
 function rightClick(clickEvent) {clickEvent.preventDefault();}  

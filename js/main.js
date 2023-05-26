@@ -52,26 +52,24 @@ function openEmu(core, bios, gam, dataPath, loaderPath) {
 // https://cdn.jsdelivr.net/gh/EmulatorJS/EmulatorJS@main/data/
 // https://cdn.jsdelivr.net/gh/EmulatorJS/EmulatorJS@main/data/loader.js
 
-function openRuffle(swf) {
+function openRuffle(url) {
   let win = window.open();
-  fetch("https://raw.githubusercontent.com/25HoursaDay/hecker.bat/main/frame.html")
+  fetch("https://cdn.jsdelivr.net/gh/25HoursaDay/hecker.bat@main/frame.html")
     .then((result) => {
       return result.text();
     })
     .then((content) => {
-      win.document.write(content);
+      win.document.querySelector("html").innerHTML = content;
     });
 
-  fetch("https://raw.githubusercontent.com/25HoursaDay/hecker.bat/main/html/ruffle.html")
+  fetch("https://cdn.jsdelivr.net/gh/25HoursaDay/hecker.bat@main/html/ruffle.html")
     .then((result) => {
       return result.text();
     })
     .then((content) => {
-      win.document.getElementById("full").insertAdjacentHTML("beforeend", content);
+      win.document.querySelector("#full").innerHTML = (win.document.querySelector("#full").innerHTML + content);
+      console.log(win.document.querySelector("#full").innerHTML);
     });
-    win.document.getElementById("full").insertAdjacentHTML("beforeend", `
-    <script>ruffleLoadUrl(`+swf+`);</`+`script>
-    `);
 }
 
 

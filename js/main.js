@@ -25,7 +25,6 @@ function openProxy(url) {
     });
   win.document.getElementById("pframe").src = url;
 }
-openProxy("f");
 
 function openEmu(core, bios, gam, dataPath, loaderPath) {
   let win = window.open();
@@ -83,7 +82,9 @@ function maximize() {
   document.getElementById("maximize").style.display = "none";
   document.getElementById("minimize").style.display = "block";
 }
-dragElement(document.getElementById("full"));
+if (HeckerPage == ("main" || "settings")) {
+  dragElement(document.getElementById("full"));
+}
 
 function dragElement(elmnt) {
   var pos1 = 0,

@@ -1,25 +1,105 @@
-.main {border:4px green solid; margin:auto;
+* {
+  font-family: "tahoma";
+}
+
+#full {
+  height: 75vh;
+  width: 75vh;
+  border: 4px green solid;
+  box-sizing: border-box;
+  z-index: 9;
+  overflow: hidden;
+  position: absolute;
+  border-radius: 5px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+
+.fe {
+  background-color: limegreen;
+  height: 28px;
+  width: 100%;
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+  position: sticky;
+  overflow: hidden;
+  user-select: none;
+}
+
+#btns {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  margin-left: calc(75vh - 92px);
+  float: right;
+  position: absolute;
+}
+
+.barbtn {
+  border: 2px darkgreen solid;
+  width: 20px;
+  margin-right: 5px;
+  background-color: limegreen;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  font-weight: 900;
+}
+
+.barbtn:hover {
+  cursor: pointer;
+}
+
+.bartext {
+  font-size: 25px;
+  margin-left: 5px;
+}
+
+.bartext:hover {
+  cursor: pointer;
+}
+
+#efef {
+  height: calc(100% - 28px);
+  width: 100%;
+  margin-top: 0;
+  border-top: 4px green solid;
   background-color: black;
-  width: 40%;height: 50vh;
-  border-radius: 50px;
-  animation-name: slidein;
-  animation-duration: 2s;
-  position: relative;
-  padding-bottom: 10px;
-  overflow-x: hidden;overflow-y: scroll;
-  font-family: noto sans mono;
-  text-align: center;}
-	  
-.title {color: green;margin-top: 20px;position:relative;}
-	  
-.title a:hover {color: red;}
-  
-.btnDiv {margin:auto;overflow-x: hidden;overflow-y: scroll;position:relative; height:inherit; border-radius: 50px;border:4px solid green;width:80%;
-  max-height: calc(100% - 90px);}
-  
-.btn {color: green; background-color: #000000;font-size: 20px;border:green solid;border-radius: 51122px;margin-top: 5px;position:relative;width: 90%;height: 40px;}
-	  
-.btn:hover {cursor: pointer;color: red;border: red solid;font-size: 22px;}
-	  
-@keyframes slidein {0% {opacity: 0%;}100% {opacity: 100%;}}
-	  
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+  overflow-y: scroll;
+  text-align: center;
+}
+
+#pframe {
+  color: green;
+  height: 100vh;
+  margin-top: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+#pframe a {
+  padding: 5px;
+  border: 2px green solid;
+  border-radius: 5px;
+  width: 95%;
+  box-sizing: border-box;
+  margin-top: 0px;
+}
+
+#maximize {
+  display: none;
+}
+
+#minimize {
+  display: block;
+}

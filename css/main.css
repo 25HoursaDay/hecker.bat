@@ -103,3 +103,7 @@
 #minimize {
   display: block;
 }
+
+.main_options {
+  cursor: pointer;
+}
